@@ -1,21 +1,34 @@
-name: GitHub Actions Demo
+name: Main workflow
 
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  Explore-GitHub-Actions:
+  test-job-one:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+
+      - name: Print repository variables
         run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          echo "=== Repository Variables ==="
+          echo "Repository: ${{ github.repository }}"
+          echo "Repository Owner: ${{ github.repository_owner }}"
+          echo "Repository Name: ${{ github.event.repository.name }}"
+          echo "Default Branch: ${{ github.event.repository.default_branch }}"
+          echo "Repository URL: ${{ github.event.repository.html_url }}"
+          echo "Repository Clone URL: ${{ github.event.repository.clone_url }}"
+          echo "Repository SSH URL: ${{ github.event.repository.ssh_url }}"
+          echo "Repository Private: ${{ github.event.repository.private }}"
+          echo "Repository Fork: ${{ github.event.repository.fork }}"
+          echo "Repository Language: ${{ github.event.repository.language }}"
+          echo "Repository Size: ${{ github.event.repository.size }}"
+          echo "Repository Stars: ${{ github.event.repository.stargazers_count }}"
+          echo "Repository Forks: ${{ github.event.repository.forks_count }}"
+          echo "Repository Open Issues: ${{ github.event.repository.open_issues_count }}"
+          echo ""
