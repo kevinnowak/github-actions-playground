@@ -89,3 +89,22 @@ jobs:
           echo "Available vars context (JSON):"
           echo "${{ toJSON(vars) }}"
           echo ""
+
+      - name: Print Runner Information
+        run: |
+          echo "=== Runner Information ==="
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Runner Arch: ${{ runner.arch }}"
+          echo "Runner Name: ${{ runner.name }}"
+          echo "Runner Tool Cache: ${{ runner.tool_cache }}"
+          echo "Runner Temp: ${{ runner.temp }}"
+          echo ""
+          
+      - name: Print Additional System Info
+        run: |
+          echo "=== System Information ==="
+          echo "Current Date: $(date)"
+          echo "Working Directory: $(pwd)"
+          echo "User: $(whoami)"
+          echo "OS Release:"
+          cat /etc/os-release | head -5
