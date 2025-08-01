@@ -87,5 +87,5 @@ jobs:
           echo "VARIABLE_ONE: ${{ vars.VARIABLE_ONE }}"
           echo ""
           echo "Available vars context (JSON):"
-          echo '${{ toJSON(vars) }}'
+          echo "${{ toJSON(vars) }}"
           echo ""
