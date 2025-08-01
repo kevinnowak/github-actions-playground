@@ -84,5 +84,8 @@ jobs:
       - name: Print custom repository variables
         run: |
           echo "=== Custom repository variables ==="
-          echo "GITHUB_REPOSITORY: $VARIABLE_ONE"
+          echo "VARIABLE_ONE: ${{ vars.VARIABLE_ONE }}"
+          echo ""
+          echo "Available vars context (JSON):"
+          echo '${{ toJSON(vars) }}'
           echo ""
