@@ -19,10 +19,17 @@ on:
 jobs:
   test-job-main:
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Print selected environment
+        run: |
+          echo "=== Selected environment ==="
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo ""
 
       - name: Print repository information
         run: |
