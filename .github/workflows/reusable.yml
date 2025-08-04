@@ -29,6 +29,8 @@ jobs:
           echo ""
           echo "GITHUB_TOKEN_OVERRIDE: ${{ secrets.GITHUB_TOKEN_OVERRIDE }}"
           echo ""
+          echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+          echo ""
           echo "Available secrets context (JSON):"
           echo "${{ toJSON(secrets) }}"
           echo ""
