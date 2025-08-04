@@ -28,7 +28,7 @@ jobs:
       - name: Print selected environment
         run: |
           echo "=== Selected environment ==="
-          echo "Environment: ${{ github.environment }}"
+          echo "Environment: ${{ github.event.inputs.environment || 'dev' }}"
           echo ""
 
       - name: Print repository information
