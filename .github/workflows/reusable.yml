@@ -25,8 +25,6 @@ jobs:
           echo "=== Custom repository secrets ==="
           echo "SECRET_ONE: ${{ secrets.SECRET_ONE }}"
           echo ""
-          echo "GITHUB_TOKEN_OVERRIDE: ${{ secrets.GITHUB_TOKEN_OVERRIDE }}"
-          echo ""
           echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
           echo ""
           echo "Available secrets context (JSON):"
