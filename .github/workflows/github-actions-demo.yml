@@ -25,12 +25,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Print selected environment
-        run: |
-          echo "=== Selected environment ==="
-          echo "Environment: ${{ github.event.inputs.environment || 'dev' }}"
-          echo ""
-
       - name: Print repository information
         run: |
           echo "=== Repository information ==="
@@ -134,7 +128,20 @@ jobs:
           echo "User: $(whoami)"
           echo "OS Release:"
           cat /etc/os-release | head -5
-  
+
+      - name: Print selected environment
+        run: |
+          echo "=== Selected environment ==="
+          echo "Environment: ${{ github.event.inputs.environment || 'dev' }}"
+          echo ""
+
+      - name: Print custom repository variables
+        run: |
+          echo "=== Custom repository variables ==="
+          echo "Environment: ${{ github.event.inputs.environment || 'dev' }}"
+          echo "Available vars context (JSON):"
+          echo "${{ toJSON(vars) }}"
+          echo "" 
 
   call-reusable-workflow:
     needs: test-job-main
