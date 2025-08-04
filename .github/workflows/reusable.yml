@@ -21,4 +21,15 @@ jobs:
           echo "Available vars context (JSON):"
           echo "${{ toJSON(vars) }}"
           echo ""
+
+      - name: Print custom repository secrets
+        run : |
+          echo "=== Custom repository secrets ==="
+          echo "SECRET_ONE: ${{ secrets.SECRET_ONE }}"
+          echo ""
+          echo "GITHUB_TOKEN_OVERRIDE: ${{ secrets.GITHUB_TOKEN_OVERRIDE }}"
+          echo ""
+          echo "Available secrets context (JSON):"
+          echo "${{ toJSON(secrets) }}"
+          echo ""
     
