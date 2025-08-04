@@ -122,5 +122,3 @@ jobs:
   call-reusable-workflow:
     needs: test-job-main
     uses: ./.github/workflows/reusable.yml
-    secrets:
-      SECRET_ONE: ${{ secrets.SECRET_ONE }}
