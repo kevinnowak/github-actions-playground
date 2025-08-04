@@ -90,6 +90,15 @@ jobs:
           echo "${{ toJSON(vars) }}"
           echo ""
 
+      - name: Print custom repository secrets
+        run: |
+          echo "=== Custom repository secrets ==="
+          echo "SECRET_ONE: ${{ secrets.SECRET_ONE }}"
+          echo ""
+          echo "Available secrets context (JSON):"
+          echo "${{ toJSON(secrets) }}"
+          echo ""
+
       - name: Print Runner Information
         run: |
           echo "=== Runner Information ==="
