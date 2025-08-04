@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-job-one:
+  test-job-main:
     runs-on: ubuntu-latest
 
     steps:
@@ -108,7 +108,7 @@ jobs:
           echo "Runner Tool Cache: ${{ runner.tool_cache }}"
           echo "Runner Temp: ${{ runner.temp }}"
           echo ""
-          
+
       - name: Print Additional System Info
         run: |
           echo "=== System Information ==="
@@ -117,3 +117,11 @@ jobs:
           echo "User: $(whoami)"
           echo "OS Release:"
           cat /etc/os-release | head -5
+  
+
+  call-reusable-workflow:
+    needs: test-job-main
+    uses: ./.github/workflows/reusable.yml
+    secrets:
+      SECRET_ONE: ${{ secrets.SECRET_ONE }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
