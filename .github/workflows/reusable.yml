@@ -2,6 +2,9 @@ name: Reusable workflow
 
 on:
   workflow_call:
+    secrets:
+      SECRET_ONE:
+        required: false
 
 jobs:
   test-job-reusable:
