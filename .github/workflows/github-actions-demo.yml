@@ -19,7 +19,7 @@ on:
 jobs:
   test-job-main:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: ${{ github.event.inputs.environment || 'dev' }}
 
     steps:
       - name: Checkout repository
@@ -97,7 +97,7 @@ jobs:
           echo "=== Custom repository variables ==="
           echo "VARIABLE_ONE: ${{ vars.VARIABLE_ONE }}"
           echo ""
-          echo "DEV_ENV_VARIABLE_ONE: ${{ vars.DEV_ENV_VARIABLE_ONE }}"
+          echo "DEV_ENV_VARIABLE_ONE: ${{ github.event.inputs.environment.DEV_ENV_VARIABLE_ONE }}"
           echo ""
           echo "Available vars context (JSON):"
           echo "${{ toJSON(vars) }}"
