@@ -5,7 +5,7 @@ on:
     secrets:
       SECRET_ONE:
         required: false
-      GITHUB_TOKEN:
+      GITHUB_TOKEN_OVERRIDE:
         required: false
 
 jobs:
