@@ -19,7 +19,7 @@ on:
 jobs:
   test-job-main:
     runs-on: ubuntu-latest
-#    environment: ${{ github.event.inputs.environment || 'dev' }}
+    environment: ${{ github.event.inputs.environment || 'dev' }}
 
     steps:
       - name: Checkout repository
@@ -97,6 +97,8 @@ jobs:
           echo "=== Custom repository variables ==="
           echo "VARIABLE_ONE: ${{ vars.VARIABLE_ONE }}"
           echo ""
+          echo "DEV_ENV_VARIABLE_ONE: ${{ vars.DEV_ENV_VARIABLE_ONE }}"
+          echo ""
           echo "Available vars context (JSON):"
           echo "${{ toJSON(vars) }}"
           echo ""
@@ -105,6 +107,8 @@ jobs:
         run: |
           echo "=== Custom repository secrets ==="
           echo "SECRET_ONE: ${{ secrets.SECRET_ONE }}"
+          echo ""
+          echo "DEV_ENV_SECRET_ONE: ${{ secrets.DEV_ENV_SECRET_ONE }}"
           echo ""
           echo "Available secrets context (JSON):"
           echo "${{ toJSON(secrets) }}"
