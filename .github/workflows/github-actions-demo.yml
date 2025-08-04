@@ -19,7 +19,7 @@ on:
 jobs:
   test-job-main:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment || 'dev' }}
+#    environment: ${{ github.event.inputs.environment || 'dev' }}
 
     steps:
       - name: Checkout repository
@@ -134,14 +134,6 @@ jobs:
           echo "=== Selected environment ==="
           echo "Environment: ${{ github.event.inputs.environment || 'dev' }}"
           echo ""
-
-      - name: Print custom repository variables
-        run: |
-          echo "=== Custom repository variables ==="
-          echo "Environment: ${{ github.event.inputs.environment || 'dev' }}"
-          echo "Available vars context (JSON):"
-          echo "${{ toJSON(vars) }}"
-          echo "" 
 
   call-reusable-workflow:
     needs: test-job-main
