@@ -19,7 +19,7 @@ on:
 jobs:
   test-job-main:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment || 'dev' }}
+    environment: ${{ github.event.inputs.environment }}
 
     steps:
       - name: Checkout repository
@@ -136,14 +136,14 @@ jobs:
       - name: Print selected environment
         run: |
           echo "=== Selected environment ==="
-          echo "Environment: ${{ github.event.inputs.environment || 'dev' }}"
+          echo "Environment: ${{ github.event.inputs.environment }}"
           echo ""
 
   call-reusable-workflow:
     needs: test-job-main
     uses: ./.github/workflows/reusable.yml
     with:
-      environment: ${{ github.event.inputs.environment || 'dev' }}
+      environment: ${{ github.event.inputs.environment }}
     secrets:
       SECRET_ONE: ${{ secrets.SECRET_ONE }}
       DEV_ENV_SECRET_ONE: ${{ secrets.DEV_ENV_SECRET_ONE }}
