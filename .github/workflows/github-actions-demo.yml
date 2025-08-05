@@ -146,4 +146,4 @@ jobs:
       environment: ${{ github.event.inputs.environment || 'dev' }}
     secrets:
       SECRET_ONE: ${{ secrets.SECRET_ONE }}
-#      DEV_ENV_SECRET_ONE: ${{ secrets.DEV_ENV_SECRET_ONE }}
+      DEV_ENV_SECRET_ONE: ${{ secrets.DEV_ENV_SECRET_ONE }}
