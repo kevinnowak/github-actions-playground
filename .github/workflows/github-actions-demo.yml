@@ -25,72 +25,72 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Print repository information
-        run: |
-          echo "=== Repository information ==="
-          echo "Repository: ${{ github.repository }}"
-          echo "Repository Owner: ${{ github.repository_owner }}"
-          echo "Repository Name: ${{ github.event.repository.name }}"
-          echo "Default Branch: ${{ github.event.repository.default_branch }}"
-          echo "Repository URL: ${{ github.event.repository.html_url }}"
-          echo "Repository Clone URL: ${{ github.event.repository.clone_url }}"
-          echo "Repository SSH URL: ${{ github.event.repository.ssh_url }}"
-          echo "Repository Private: ${{ github.event.repository.private }}"
-          echo "Repository Fork: ${{ github.event.repository.fork }}"
-          echo "Repository Language: ${{ github.event.repository.language }}"
-          echo "Repository Size: ${{ github.event.repository.size }}"
-          echo "Repository Stars: ${{ github.event.repository.stargazers_count }}"
-          echo "Repository Forks: ${{ github.event.repository.forks_count }}"
-          echo "Repository Open Issues: ${{ github.event.repository.open_issues_count }}"
-          echo ""
+#      - name: Print repository information
+#        run: |
+#          echo "=== Repository information ==="
+#          echo "Repository: ${{ github.repository }}"
+#          echo "Repository Owner: ${{ github.repository_owner }}"
+#          echo "Repository Name: ${{ github.event.repository.name }}"
+#          echo "Default Branch: ${{ github.event.repository.default_branch }}"
+#          echo "Repository URL: ${{ github.event.repository.html_url }}"
+#          echo "Repository Clone URL: ${{ github.event.repository.clone_url }}"
+#          echo "Repository SSH URL: ${{ github.event.repository.ssh_url }}"
+#          echo "Repository Private: ${{ github.event.repository.private }}"
+#          echo "Repository Fork: ${{ github.event.repository.fork }}"
+#          echo "Repository Language: ${{ github.event.repository.language }}"
+#          echo "Repository Size: ${{ github.event.repository.size }}"
+#          echo "Repository Stars: ${{ github.event.repository.stargazers_count }}"
+#          echo "Repository Forks: ${{ github.event.repository.forks_count }}"
+#          echo "Repository Open Issues: ${{ github.event.repository.open_issues_count }}"
+#          echo ""
 
-      - name: Print workflow context variables
-        run: |
-          echo "=== Workflow context variables ==="
-          echo "Workflow: ${{ github.workflow }}"
-          echo "Run ID: ${{ github.run_id }}"
-          echo "Run Number: ${{ github.run_number }}"
-          echo "Job: ${{ github.job }}"
-          echo "Action: ${{ github.action }}"
-          echo "Actions: ${{ github.actions }}"
-          echo "Actor: ${{ github.actor }}"
-          echo "Event Name: ${{ github.event_name }}"
-          echo "Event Path: ${{ github.event_path }}"
-          echo "Workspace: ${{ github.workspace }}"
-          echo "SHA: ${{ github.sha }}"
-          echo "Ref: ${{ github.ref }}"
-          echo "Ref Name: ${{ github.ref_name }}"
-          echo "Ref Type: ${{ github.ref_type }}"
-          echo "Head Ref: ${{ github.head_ref }}"
-          echo "Base Ref: ${{ github.base_ref }}"
-          echo "Server URL: ${{ github.server_url }}"
-          echo "API URL: ${{ github.api_url }}"
-          echo "GraphQL URL: ${{ github.graphql_url }}"
-          echo ""
+#      - name: Print workflow context variables
+#        run: |
+#          echo "=== Workflow context variables ==="
+#          echo "Workflow: ${{ github.workflow }}"
+#          echo "Run ID: ${{ github.run_id }}"
+#          echo "Run Number: ${{ github.run_number }}"
+#          echo "Job: ${{ github.job }}"
+#          echo "Action: ${{ github.action }}"
+#          echo "Actions: ${{ github.actions }}"
+#          echo "Actor: ${{ github.actor }}"
+#          echo "Event Name: ${{ github.event_name }}"
+#          echo "Event Path: ${{ github.event_path }}"
+#          echo "Workspace: ${{ github.workspace }}"
+#          echo "SHA: ${{ github.sha }}"
+#          echo "Ref: ${{ github.ref }}"
+#          echo "Ref Name: ${{ github.ref_name }}"
+#          echo "Ref Type: ${{ github.ref_type }}"
+#          echo "Head Ref: ${{ github.head_ref }}"
+#          echo "Base Ref: ${{ github.base_ref }}"
+#          echo "Server URL: ${{ github.server_url }}"
+#          echo "API URL: ${{ github.api_url }}"
+#          echo "GraphQL URL: ${{ github.graphql_url }}"
+#          echo ""
 
-      - name: Print environment variables
-        run: |
-          echo "=== Environment variables ==="
-          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
-          echo "GITHUB_ACTOR: $GITHUB_ACTOR"
-          echo "GITHUB_SHA: $GITHUB_SHA"
-          echo "GITHUB_REF: $GITHUB_REF"
-          echo "GITHUB_REF_NAME: $GITHUB_REF_NAME"
-          echo "GITHUB_REF_TYPE: $GITHUB_REF_TYPE"
-          echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
-          echo "GITHUB_RUN_ID: $GITHUB_RUN_ID"
-          echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
-          echo "GITHUB_JOB: $GITHUB_JOB"
-          echo "GITHUB_ACTION: $GITHUB_ACTION"
-          echo "GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME"
-          echo "GITHUB_EVENT_PATH: $GITHUB_EVENT_PATH"
-          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-          echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF"
-          echo "GITHUB_BASE_REF: $GITHUB_BASE_REF"
-          echo "GITHUB_SERVER_URL: $GITHUB_SERVER_URL"
-          echo "GITHUB_API_URL: $GITHUB_API_URL"
-          echo "GITHUB_GRAPHQL_URL: $GITHUB_GRAPHQL_URL"
-          echo ""
+#      - name: Print environment variables
+#        run: |
+#          echo "=== Environment variables ==="
+#          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+#          echo "GITHUB_ACTOR: $GITHUB_ACTOR"
+#          echo "GITHUB_SHA: $GITHUB_SHA"
+#          echo "GITHUB_REF: $GITHUB_REF"
+#          echo "GITHUB_REF_NAME: $GITHUB_REF_NAME"
+#          echo "GITHUB_REF_TYPE: $GITHUB_REF_TYPE"
+#          echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+#          echo "GITHUB_RUN_ID: $GITHUB_RUN_ID"
+#          echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
+#          echo "GITHUB_JOB: $GITHUB_JOB"
+#          echo "GITHUB_ACTION: $GITHUB_ACTION"
+#          echo "GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME"
+#          echo "GITHUB_EVENT_PATH: $GITHUB_EVENT_PATH"
+#          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+#          echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF"
+#          echo "GITHUB_BASE_REF: $GITHUB_BASE_REF"
+#          echo "GITHUB_SERVER_URL: $GITHUB_SERVER_URL"
+#          echo "GITHUB_API_URL: $GITHUB_API_URL"
+#          echo "GITHUB_GRAPHQL_URL: $GITHUB_GRAPHQL_URL"
+#          echo ""
 
       - name: Print custom repository variables
         run: |
@@ -114,24 +114,24 @@ jobs:
           echo "${{ toJSON(secrets) }}"
           echo ""
 
-      - name: Print Runner Information
-        run: |
-          echo "=== Runner Information ==="
-          echo "Runner OS: ${{ runner.os }}"
-          echo "Runner Arch: ${{ runner.arch }}"
-          echo "Runner Name: ${{ runner.name }}"
-          echo "Runner Tool Cache: ${{ runner.tool_cache }}"
-          echo "Runner Temp: ${{ runner.temp }}"
-          echo ""
+#      - name: Print Runner Information
+#        run: |
+#          echo "=== Runner Information ==="
+#          echo "Runner OS: ${{ runner.os }}"
+#          echo "Runner Arch: ${{ runner.arch }}"
+#          echo "Runner Name: ${{ runner.name }}"
+#          echo "Runner Tool Cache: ${{ runner.tool_cache }}"
+#          echo "Runner Temp: ${{ runner.temp }}"
+#          echo ""
 
-      - name: Print Additional System Info
-        run: |
-          echo "=== System Information ==="
-          echo "Current Date: $(date)"
-          echo "Working Directory: $(pwd)"
-          echo "User: $(whoami)"
-          echo "OS Release:"
-          cat /etc/os-release | head -5
+#      - name: Print Additional System Info
+#        run: |
+#          echo "=== System Information ==="
+#          echo "Current Date: $(date)"
+#          echo "Working Directory: $(pwd)"
+#          echo "User: $(whoami)"
+#          echo "OS Release:"
+#          cat /etc/os-release | head -5
 
       - name: Print selected environment
         run: |
@@ -144,3 +144,4 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     secrets:
       SECRET_ONE: ${{ secrets.SECRET_ONE }}
+      DEV_ENV_SECRET_ONE: ${{ secrets.DEV_ENV_SECRET_ONE }}
