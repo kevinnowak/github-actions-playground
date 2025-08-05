@@ -142,6 +142,8 @@ jobs:
   call-reusable-workflow:
     needs: test-job-main
     uses: ./.github/workflows/reusable.yml
+    with:
+      environment: ${{ github.event.inputs.environment || 'dev' }}
     secrets:
       SECRET_ONE: ${{ secrets.SECRET_ONE }}
       DEV_ENV_SECRET_ONE: ${{ secrets.DEV_ENV_SECRET_ONE }}
